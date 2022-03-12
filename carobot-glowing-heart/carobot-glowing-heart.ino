@@ -1,6 +1,9 @@
-
 // declare and initialize an array to save all pin number
+#if defined(__AVR_ATtiny85__) // for using ATtiny85 at 1MHz
+int pins[4] = {0, 1, 2, 4};
+#else
 int pins[4] = {2, 3, 4, 5};
+#endif
 
 void setup() {
   // using a loop to set all the pins as output
